@@ -4,7 +4,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $nombres = $_POST["nombres"];
     $apellidos = $_POST["apellidos"];
     $correo = $_POST["correo"];
-    $usurio = $_POST["usuario"];
+    $usuario = $_POST["usuario"];
     $contraseña = $_POST["contraseña"];
     $rol = $_POST["rol"];
     $my_query = "insert into usuario(nombres, apellidos, correo, usuario, contraseña, rol) 
