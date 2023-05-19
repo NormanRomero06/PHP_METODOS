@@ -1,6 +1,6 @@
 <?php
 if($_SERVER["REQUEST_METHOD"]=="POST"){
-    require_once 'conexion.php';
+    require_once '../conexion.php';
     $totalVenta = $_POST["totalVenta"];
     $DetalleVenta_idDetalleVenta = $_POST["DetalleVenta_idDetalleVenta"];
     $Usuario_idUsuario = $_POST["Usuario_idUsuario"];

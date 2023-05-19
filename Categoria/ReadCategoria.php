@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "GET"){
-      require_once 'conexion.php' ;
+      require_once '../conexion.php';
       $my_query = "SELECT * from categoria";
       $result = $mysql->query($my_query);
       if ($mysql->affected_rows > 0) {

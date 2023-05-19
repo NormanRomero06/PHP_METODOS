@@ -1,6 +1,6 @@
 <?php
 if($_SERVER["REQUEST_METHOD"]=="GET"){
-    require_once 'connection.php'; 
+    require_once '../conexion.php'; 
     $idCategoria = $_GET["idCategoria"];
     $my_query = "select * from categoria where idCategoria ='" .$idCategoria."'";
 

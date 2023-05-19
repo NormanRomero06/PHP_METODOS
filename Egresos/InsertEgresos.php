@@ -1,6 +1,6 @@
 <?php
 if($_SERVER["REQUEST_METHOD"]=="POST"){
-    require_once 'conexion.php';
+    require_once '../conexion.php';
     $descripcion = $_POST["descripcion"];
     $monto = $_POST["monto"];
     $fechaHora = $_POST["fechaHora"];

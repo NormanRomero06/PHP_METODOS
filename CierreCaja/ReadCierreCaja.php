@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "GET"){
-      require_once 'conexion.php' ;
+      require_once '../conexion.php' ;
       $my_query = "SELECT cierrecaja.fechaHora AS'Fecha y hora', cierrecaja.totalEfectivoCaja AS 'Total dinero en caja', egresos.Monto AS 'Egresos', caja.montoTransaccion AS 'Ingresos'
       FROM cierrecaja 
       INNER JOIN egresos

@@ -1,6 +1,6 @@
 <?php
 if($_SERVER["REQUEST_METHOD"]=="GET"){
-    require_once 'connection.php'; 
+    require_once '../conexion.php'; 
     $idCategoria = $_GET["idPagos"];
     $my_query = "select * from egresos where idPagos ='" .$idPagos."'";
 

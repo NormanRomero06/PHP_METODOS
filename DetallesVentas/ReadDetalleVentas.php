@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "GET"){
-      require_once 'conexion.php' ;
+      require_once '../conexion.php' ;
       $my_query = "SELECT producto.nombre AS 'Nombre', producto.descripcion AS 'Descripcion', detallesventa.precioUnitario AS 'Precio Unitario', detallesventa.cantidadVendida AS 'Cantidad Vendida'
       From detallesventa
       INNER JOIN producto

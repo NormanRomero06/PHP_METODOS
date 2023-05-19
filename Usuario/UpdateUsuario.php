@@ -1,6 +1,6 @@
 <?php
 if($_SERVER["REQUEST_METHOD"]=="POST"){
-    require_once 'conexion.php';
+    require_once '../conexion.php';
     $idUsuario = $_POST["idUsuario"];
     $nombres = $_POST["nombres"];
     $apellidos = $_POST["apellidos"];
