@@ -12,7 +12,7 @@ if($_SERVER["REQUEST_METHOD"]=="GET"){
         }
         echo json_encode($array);
     }else{
-        echo;
+        echo"Error Desconocido";
     }
 }
 ?>
