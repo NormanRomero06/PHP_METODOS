@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    require_once 'conexion.php';
+    require_once '../conexion.php';
     $my_query = "SELECT caja.idTransaccion, caja.fechaTransaccion, caja.tipoTransaccion, caja.montoTransaccion, venta.totalVenta AS 'Total Venta'
     FROM caja
     INNER JOIN venta

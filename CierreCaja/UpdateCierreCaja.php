@@ -1,22 +1,16 @@
 <?php
 if($_SERVER["REQUEST_METHOD"]=="POST"){
     require_once '../conexion.php';
-    $idCierres = $_POST["idCierres"];
-    $fechaHora = $_POST["fechaHora"];
-    $totalEfectivoCaja = $_POST["totalEfectivoCaja"];
-    $Egresos_idPagos = $_POST["Egresos_idPagos"];
-    $Caja_idTransaccion = $_POST["Caja_idTransaccion"];
+  $idCierres = $_GET["idCierres"];
+  $fechaHora = $_GET["fechaHora"];
+  $totalEfectivoCaja = $_GET["totalEfectivoCaja"];
+  $Egresos_idPagos = $_GET["Egresos_idPagos"];
+  $Caja_idTransaccion = $_GET["Caja_idTransaccion"];
 
     $query =
-    "UPDATE cierrecaja SET idCierres = ?, fechaHora = ?, totalEfectivoCaja = ?, Egresos_idPagos = ?, Caja_idTransaccion = ?  WHERE idCierres = ?";
+  "UPDATE cierrecaja SET fechaHora = '$fechaHora', totalEfectivoCaja = '$totalEfectivoCaja', Egresos_idPagos = '$Egresos_idPagos', Caja_idTransaccion = '$Caja_idTransaccion'  WHERE idCierres = $idCierres";
 
-  $result = $mysql->execute_query($query, [
-    $idCierres,
-    $fechaHora,
-    $totalEfectivoCaja,
-    $Egresos_idPagos,
-    $Caja_idTransaccion,
-  ]);
+  $result = $mysql->query($query);
     
     if($result == true){
         echo "Registro editado satisfactoriamente...";

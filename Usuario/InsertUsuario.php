@@ -11,9 +11,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     values ('".$nombres."', '".$apellidos."', '".$correo."', '".$usuario."', '".$contraseña."', '".$rol."')";
     $result = $mysql -> query($my_query);
     if($result == true){
-        echo "Registro guardado satisfactoriamente...";
+        echo "Usuario guardado satisfactoriamente...";
     }else{
-        echo "Error al guardar registro...";
+        echo "Error al guardar usuario...";
     }
 }else{
     echo"Error desconocido";

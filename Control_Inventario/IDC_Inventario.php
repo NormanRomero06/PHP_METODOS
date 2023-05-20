@@ -1,8 +1,8 @@
 <?php
 if($_SERVER["REQUEST_METHOD"]=="GET"){
     require_once '../conexion.php'; 
-    $idUsuario = $_GET["idUsuario"];
-    $my_query = "select * from usuario where idUsuario ='" .$idUsuario."'";
+    $idInventario = $_GET["idInventario"];
+    $my_query = "select * from inventario where idInventario ='" .$idInventario."'";
 
     $result = $mysql -> query($my_query);
     

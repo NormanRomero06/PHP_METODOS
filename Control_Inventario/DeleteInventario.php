@@ -1,8 +1,8 @@
 <?php
 if($_SERVER["REQUEST_METHOD"]=="DELETE"){
     require_once '../conexion.php';
-    $idDetalleVenta = $_GET["idDetalleVenta"];
-    $my_query = "DELETE from detallesventa where idDetalleVenta = $idDetalleVenta";
+    $idInventario = $_GET["idInventario"];
+    $my_query = "DELETE from inventario where idInventario = $idInventario";
     $result = $mysql -> query($my_query);
     echo "Registro eliminado";
 }else{
