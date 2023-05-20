@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "GET"){
       require_once '../conexion.php' ;
-      $my_query = "SELECT * from egreso";
+      $my_query = "SELECT * from egresos";
       $result = $mysql->query($my_query);
       if ($mysql->affected_rows > 0) {
           $json = "{\"data\":[";

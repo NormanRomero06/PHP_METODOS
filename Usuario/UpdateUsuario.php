@@ -1,32 +1,31 @@
 <?php
-if($_SERVER["REQUEST_METHOD"]=="POST"){
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require_once '../conexion.php';
-    $idUsuario = $_POST["idUsuario"];
-    $nombres = $_POST["nombres"];
-    $apellidos = $_POST["apellidos"];
-    $correo = $_POST["correo"];
-    $usurio = $_POST["usuario"];
-    $contraseña = $_POST["contraseña"];
-    $rol = $_POST["rol"];
-    
-    $query =
-    "UPDATE categoria SET nombres = ?, apellidos = ?, correo = ?, usuario = ?, contraseña = ?, rol = ? WHERE idUsuario = ?";
+    $idUsuario = $_GET["idUsuario"];
+    $nombres = $_GET["nombres"];
+    $apellidos = $_GET["apellidos"];
+    $correo = $_GET["correo"];
+    $usuario = $_GET["usuario"];
+    $contraseña = $_GET["contraseña"];
+    $rol = $_GET["rol"];
 
-  $result = $mysql->execute_query($query, [
-    $nombres,
-    $apellidos,
-    $correo,
-    $usurio,
-    $contraseña,
-    $rol,
-    $idUsuario,
-  ]);
-    
-    if($result == true){
-        echo "Registro editado satisfactoriamente...";
-    }else{
-        echo"Error al editar registro...";
+    $query =
+    "UPDATE usuario SET 
+    nombres = '$nombres', 
+    apellidos = '$apellidos', 
+    correo = '$correo',
+    usuario = '$usuario',
+    contraseña = '$contraseña',
+    rol = $rol
+    WHERE idUsuario = $idUsuario";
+
+    $result = $mysql->query($query);
+
+    if ($result == true) {
+        echo "Usuario editado satisfactoriamente...";
+    } else {
+        echo "Error al editar usuario...";
     }
-}else{
-    echo"Error desconocido";
-}
+} else {
+    echo "Error desconocido";
+} 

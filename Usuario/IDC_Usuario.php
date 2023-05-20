@@ -1,7 +1,7 @@
 <?php
 if($_SERVER["REQUEST_METHOD"]=="GET"){
     require_once '../conexion.php'; 
-    $idCategoria = $_GET["idCategoria"];
+    $idUsuario = $_GET["idUsuario"];
     $my_query = "select * from usuario where idUsuario ='" .$idUsuario."'";
 
     $result = $mysql -> query($my_query);
