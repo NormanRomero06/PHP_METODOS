@@ -1,6 +1,6 @@
 <?php
 if($_SERVER["REQUEST_METHOD"]=="GET"){
-    require_once 'connection.php'; 
+    require_once '../conexion.php'; 
     $idTransaccion = $_GET["idTransaccion"];
     $my_query = "select * from caja where idTransaccion ='" .$idTransaccion."'";
 
@@ -12,6 +12,6 @@ if($_SERVER["REQUEST_METHOD"]=="GET"){
         }
         echo json_encode($array);
     }else{
-        echo "Eror";
+        echo "Error en la busqueda";
     }
 }
