@@ -5,7 +5,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $my_query = "DELETE from caja where idTransaccion = $idTransaccion";
     $result = $mysql->query($my_query);
 
-    echo "Registro eliminado correctamente";
+    if ($result == true) {
+        echo "Registro eliminado satisfactoriamente...";
+    } else {
+        echo "Error al eliminar registro...";
+    }
 
 } else {
     echo "Error desconocido";

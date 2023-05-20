@@ -5,7 +5,7 @@ if($_SERVER["REQUEST_METHOD"]=="DELETE"){
     $my_query = "DELETE from categoria where idCategoria = $idCategoria";
     $result = $mysql -> query($my_query);
     if($result == true){
-        echo "Categoria Eliminada...";
+        echo "Categoria eliminada satisfactoriamente...";
     }else{
         echo "Error al eliminar Categoria...";
     }

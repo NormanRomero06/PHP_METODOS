@@ -4,8 +4,11 @@ if($_SERVER["REQUEST_METHOD"]=="DELETE"){
     $idVenta = $_GET["idVenta"];
     $my_query = "DELETE from venta where idVenta = $idVenta";
     $result = $mysql -> query($my_query);
-    echo "Registro Eliminado";
-
+    if ($result == true) {
+        echo "Venta eliminado satisfactoriamente...";
+    } else {
+        echo "Error al eliminar Venta...";
+    }
 }else{
     echo"Error desconocido";
 }
