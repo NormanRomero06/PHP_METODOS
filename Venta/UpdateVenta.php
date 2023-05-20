@@ -1,25 +1,25 @@
 <?php
-if($_SERVER["REQUEST_METHOD"]=="POST"){
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require_once '../conexion.php';
-    $idVenta = $_POST["idVenta"];
-    $totalVenta = $_POST["totalVenta"];
-    $DetalleVenta_idDetalleVenta = $_POST["DetalleVenta_idDetalleVenta"];
-    $Usuario_idUsuario = $_POST["Usuario_idUsuario"];
-    
-    $query =
-    "UPDATE venta SET totalVenta = ?, DetalleVenta_idDetalleVenta = ?, Usuario_idUsuario = ? WHERE idVenta = ?";
+    $idVenta = $_GET["idVenta"];
+    $totalVenta = $_GET["totalVenta"];
+    $DetalleVenta_idDetalleVenta = $_GET["DetalleVenta_idDetalleVenta"];
+    $Usuario_idUsuario = $_GET["Usuario_idUsuario"];
 
-  $result = $mysql->execute_query($query, [
-    $totalVenta,
-    $DetalleVenta_idDetalleVenta,
-    $Usuario_idUsuario,
-  ]);
-    
-    if($result == true){
+    $query =
+    "UPDATE venta SET 
+    totalVenta = '$totalVenta', 
+    DetalleVenta_idDetalleVenta = '$DetalleVenta_idDetalleVenta', 
+    Usuario_idUsuario = '$Usuario_idUsuario'
+    WHERE idVenta = $idVenta";
+
+    $result = $mysql->query($query);
+
+    if ($result == true) {
         echo "Registro editado satisfactoriamente...";
-    }else{
-        echo"Error al editar registro...";
+    } else {
+        echo "Error al editar registro...";
     }
-}else{
-    echo"Error desconocido";
+} else {
+    echo "Error desconocido";
 }

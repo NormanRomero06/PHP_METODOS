@@ -1,11 +1,13 @@
 <?php
-if($_SERVER["REQUEST_METHOD"]=="POST"){
+if($_SERVER["REQUEST_METHOD"]=="DELETE"){
     require_once '../conexion.php';
-    $idVenta = $_POST["idVenta"];
+    $idVenta = $_GET["idVenta"];
     $my_query = "DELETE from venta where idVenta = $idVenta";
     $result = $mysql -> query($my_query);
+    echo "Registro Eliminado";
 
 }else{
     echo"Error desconocido";
 }
 ?>
+
