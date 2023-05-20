@@ -5,18 +5,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
   $nombre = $_GET["nombre"];
   $imagen = $_GET["imagen"];
 
-  $my_query = "UPDATE categoria SET nombres = '$nombres', apellidos = '$apellidos', fechaNac = '$fechaNac', titulo = '$titulo', email = '$email', facultad = '$facultad' where idC = $idC";
+  $my_query = "UPDATE categoria SET nombre = '$nombre', imagen = '$imagen' where idCategoria = $idCategoria";
   $result = $mysql->query($my_query);
-
-    $query =
-    "UPDATE categoria SET nombre = ?, imagen = ? WHERE idCategoria = ?";
-
-  $result = $mysql->execute_query($query, [
-    $nombre,
-    $imagen,
-    $idCategoria,
-  ]);
-    
     if($result == true){
         echo "Registro editado satisfactoriamente...";
     }else{
